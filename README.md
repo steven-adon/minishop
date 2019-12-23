@@ -101,3 +101,7 @@ npm start
 
 
 http://yanxuan.nosdn.127.net/9460f6b30661548c4a864607bfcdf4ca.jpg
+
+
+阿里云服务器上部署：
+pm2 start pm2.json
