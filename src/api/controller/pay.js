@@ -7,6 +7,7 @@ module.exports = class extends Base {
    * @returns {Promise<PreventPromise|void|Promise>}
    */
   async prepayAction() {
+
     const orderId = this.get('orderId');
 
     const orderInfo = await this.model('order').where({ id: orderId }).find();
@@ -21,6 +22,8 @@ module.exports = class extends Base {
       return this.fail('微信支付失败 openid empty');
     }
     const WeixinSerivce = this.service('weixin', 'api');
+
+
     try {
       const returnParams = await WeixinSerivce.createUnifiedOrder({
         openid: openid,
@@ -29,6 +32,9 @@ module.exports = class extends Base {
         total_fee: parseInt(orderInfo.actual_price * 100),
         spbill_create_ip: ''
       });
+
+      console.log('❤️❤️❤️❤️❤️', 'jdjjdjjdjfhfhdhdhjdjsjsjsjdj-Successful-wonderful')
+
       return this.success(returnParams);
     } catch (err) {
       return this.fail(400, `微信支付失败 ${err.err_code_des || err.return_msg}`);

@@ -76,6 +76,9 @@ module.exports = class extends think.Model {
       case 0:
         statusText = '未付款';
         break;
+      // case 1:
+      //   statusText = '已付款';
+      //   break;
     }
 
     return statusText;

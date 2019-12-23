@@ -54,6 +54,9 @@ module.exports = class extends Base {
       data: commentInfo
     };
 
+
+    console.log('ahhahahahha', comment)
+
     // 当前用户是否收藏
     const userHasCollect = await this.model('collect').isUserHasCollect(this.getLoginUserId(), 0, goodsId);
 
