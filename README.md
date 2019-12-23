@@ -17,10 +17,10 @@ git clone https://github.com/tumobi/nideshop
 ```
 CREATE SCHEMA `nideshop` DEFAULT CHARACTER SET utf8mb4 ;
 ```
-> 注意数据库字符编码为utf8mb4 
+> 注意数据库字符编码为utf8mb4
 + 更改数据库配置
   src/common/config/database.js
-  
+
 ```
 const mysql = require('think-model-mysql');
 
@@ -98,3 +98,8 @@ npm start
 喜欢别忘了 Star，有问题可通过微信、公众号、QQ 群联系我，谢谢您的关注。
 
 ![联系方式](http://nideshop-static.childsay.com/nideshop-qrcode.png)
+
+
+阿里云部署：
+cd var/www/minishop
+pm2 start pm2.json
